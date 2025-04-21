@@ -16,7 +16,7 @@ This is the application code we used for testing, image generation and timings.
 
 Most of the metrics are defined in the [HeightField](./appMetrics/heightfield.h) class. Their implementations are split across a few .cpp files (heightfield-metrics-XXXX.cpp), roughly organized according to the sections of the survey. River and ridge networks, along with a metrics that use them, are implemented in the helper class [TerrainAnalysis](./appMetrics/terrainanalysis.h). Example usages of the metrics from the UI parameters can be found in [mainwindow-draw-metrics.cpp](./appMetrics/mainwindow-draw-metrics.cpp).
 
-The terrain used in most of the figures of the paper is [Alps: Mont Blanc](./terrains/montblanc.png), derived from SRTM-3 data. The default values of the various UI widgets have been set accordingly. You can load one of the preset terrains or import your own, either in PNG or ASCII grid format. After loading, you can scale the terrain to match the desired resolution, spatial extent or elevation range. Other modifier buttons include filling or breaching the terrain to enforce a consistent drainage network, and Gaussian smoothing, implemented for testing purposes.
+The terrain used in most of the figures of the paper is [Alps: Mont Blanc](./terrains/alps-montblanc.png), derived from SRTM-3 data. The default values of the various UI widgets have been set accordingly. You can load one of the preset terrains or import your own, either in PNG or ASCII grid format. After loading, you can scale the terrain to match the desired resolution, spatial extent or elevation range. Other modifier buttons include filling or breaching the terrain to enforce a consistent drainage network, and Gaussian smoothing, implemented for testing purposes.
 
 Some metrics (such as visibility) can take a long time to compute and the application might appear unresponsive during this time, as all code runs on the UI thread. For this reason, some input fields have callbacks that update the terrain metric texture dynamically, while others require reselecting the metric name to manually trigger the update. 
 
@@ -29,7 +29,9 @@ We provide a Qt project file to build the application. It has been tested on a W
 
 Please make sure to move or link the [terrains](./terrains) folder to the same directory as the executable or, if you are running it from an IDE, set up the working directory accordingly. 
 
-We included a varied set of [sample terrains](), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
+You can also download the compiled binaries for Windows, see the [release](./releases/tag/v1.0).
+
+We included a varied set of [sample terrains](./releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
 
 
 ### Improvements
