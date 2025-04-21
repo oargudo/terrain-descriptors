@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+    <file>./shaders/skybox.vert</file>
+    <file>./shaders/skybox.frag</file>
+    <file>./shaders/terrain.vert</file>
+    <file>./shaders/terrain.frag</file>
+</qresource>
+</RCC>
