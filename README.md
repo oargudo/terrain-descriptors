@@ -29,9 +29,9 @@ We provide a Qt project file to build the application. It has been tested on a W
 
 Please make sure to move or link the [terrains](./terrains) folder to the same directory as the executable or, if you are running it from an IDE, set up the working directory accordingly. 
 
-You can also download the compiled binaries for Windows, see the [release](./releases/tag/v1.0).
+We included a varied set of [sample terrains](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
 
-We included a varied set of [sample terrains](./releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
+You can also download the compiled [binaries for Windows](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/app-metrics.zip), see the [release](https://github.com/oargudo/terrain-descriptors/releases/tag/v1.0). 
 
 
 ### Improvements
