@@ -25,7 +25,7 @@ Note that we often prioritized simple and illustrative implementations that clos
 
 ### Compiling and running the code
 
-We provide a Qt project file to build the application. It has been tested on a Windows 11 system using Qt 6.3 and Qt 6.7, with both MinGW 11.2 and MSVC2019 compilers within Qt Creator. 
+We provide a Qt project file to build the application. It has been tested on a Windows 11 system using Qt 6.3 (MinGW 11.2 and MSVC2019 compilers) and Qt 6.8 (MinGW 13.1 and MSVC2022 compilers) within Qt Creator. 
 
 Please make sure to move or link the [terrains](./terrains) folder to the same directory as the executable or, if you are running it from an IDE, set up the working directory accordingly. 
 

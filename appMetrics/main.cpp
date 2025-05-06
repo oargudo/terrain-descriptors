@@ -5,6 +5,7 @@
 
 int main(int argc, char *argv[])
 {
+    QApplication::setStyle("windowsvista");
     QApplication a(argc, argv);
 
     QSurfaceFormat f;
