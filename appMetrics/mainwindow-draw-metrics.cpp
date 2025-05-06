@@ -524,14 +524,14 @@ void MainWindow::computeMetric()
     else if (ui->dem_zreduced_converging->isChecked()) {
         currentMetric = hf.AngleReducedHeight(ui->dem_jut_planetR->value()*1000,
                                               ui->dem_zreduced_x->value(), ui->dem_zreduced_y->value(), true);
-        paletteDefault = ColorPalette::Reds();
-        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), false, paletteMin, paletteMax);
+        paletteDefault = ColorPalette::CoolWarm();
+        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), true, paletteMin, paletteMax);
     }
     else if (ui->dem_zreduced_diverging->isChecked()) {
         currentMetric = hf.AngleReducedHeight(ui->dem_jut_planetR->value()*1000,
                                               ui->dem_zreduced_x->value(), ui->dem_zreduced_y->value(), false);
-        paletteDefault = ColorPalette::Reds();
-        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), false, paletteMin, paletteMax);
+        paletteDefault = ColorPalette::CoolWarm();
+        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), true, paletteMin, paletteMax);
     }
     else if (ui->dem_deng2008_peakProto->isChecked() || ui->dem_deng2008_peakSimil->isChecked()) {
         ScalarField2 peakProto;
