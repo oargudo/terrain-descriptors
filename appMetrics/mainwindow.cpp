@@ -337,8 +337,9 @@ void MainWindow::modifyPalette()
 
 void MainWindow::resetPaletteRange()
 {
-    setValueNoSignal(ui->sb_paletteMin, paletteMin * paletteScale);
-    setValueNoSignal(ui->sb_paletteMax, paletteMax * paletteScale);
+    setValueNoSignal(ui->sb_paletteMin, paletteMin / paletteScale);
+    setValueNoSignal(ui->sb_paletteMax, paletteMax / paletteScale);
+    computeBaseTexture(false);
     updateTexture();
 }
 
