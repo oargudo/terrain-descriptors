@@ -23,15 +23,26 @@ Some metrics (such as visibility) can take a long time to compute and the applic
 Note that we often prioritized simple and illustrative implementations that closely follow the metric definitions. In some cases, algorithmic optimizations can lead to significant speed-ups (see, for example, the example code using Summed Area Tables for TPI). Additionally, many metrics could be parallelized or implemented on the GPU. This is left as an exercise for the reader :)
 
 
-### Compiling and running the code
+### Compiling the code
 
-We provide a Qt project file to build the application. It has been tested on a Windows 11 system using Qt 6.3 (MinGW 11.2 and MSVC2019 compilers) and Qt 6.8 (MinGW 13.1 and MSVC2022 compilers) within Qt Creator. 
+We provide a Qt project file ([AppTerrainMetrics.pro](./appMetrics/AppTerrainMetrics.pro)) to build the application. It has been tested on the following systems:
+- Windows 11 and Qt 6.3, with both MinGW 11.2 and MSVC2019 compilers
+- Windows 11 and Qt 6.8, with both MinGW 13.1 and MSVC2022 compilers
+- Ubuntu 22.04.5 LTS and Qt 6.9, with GCC compiler
 
-Please make sure to move or link the [terrains](./terrains) folder to the same directory as the executable or, if you are running it from an IDE, set up the working directory accordingly. 
+To build the project using Qt Creator, open the `.pro` file, choose an appropriate kit, configure the project and build. Alternatively, you can use Qt's command-line tools from the [appMetrics](./appMetrics) directory running `qmake`and then `make`.
 
-We included a varied set of [sample terrains](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
+### Windows binaries
 
-You can also download the compiled [binaries for Windows](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/app-metrics.zip), see the [release](https://github.com/oargudo/terrain-descriptors/releases/tag/v1.0). 
+For Windows users, if you prefer not to compile the code, you can download the precompiled [binaries](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/app-metrics.zip). See the [release](https://github.com/oargudo/terrain-descriptors/releases/tag/v1.0) notes for more information. 
+
+### Running the application
+
+The application assumes access to the [terrains](./terrains) folder at runtime. Please make sure this folder is either placed or linked in the same directory as the executable. If you are running the application from an IDE, configure the working directory to point to the folder containing `terrains`. If the application runs but the *Preset terrains* dropdown is empty, it's likely that the terrains folder is not accessed correctly, since this list is initialized with the contents in [presets.txt](./terrains/presets.txt).
+
+### Sample terrains
+
+We provide a varied set of [sample terrains](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
 
 
 ### Improvements
@@ -50,12 +61,6 @@ Possible ideas to improve the current application and code:
 - Most of the terrains provided as exemplars use the [improved SRTM DEMs by Jonathan de Ferranti](https://viewfinderpanoramas.org/dem3.html).
 - High-resolution terrains have been downloaded from [ICGC](https://www.icgc.cat/en), [CNIG](https://centrodedescargas.cnig.es/CentroDescargas/home), [swissALTI3D](https://www.swisstopo.admin.ch/en/height-model-swissalti3d) and [USGS NED](https://www.usgs.gov/publications/national-elevation-dataset).
 - The Moon terrain is a crop from the [LRO LOLA DEM](https://astrogeology.usgs.gov/search/map/moon_lro_lola_dem_118m) published by USGS Astrogeology Science Center.
-
-
-## Windows binaries
-
-For convenience, if you just want to test the application, we provide Windows binaries.
-You can download them from this [release](https://github.com/oargudo/terrain-descriptors/releases/tag/v1.0).
 
 
 ## Article
