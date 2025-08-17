@@ -318,8 +318,8 @@ void MainWindow::computeMetric()
     }
     else if (ui->dem_tpi->isChecked()) {
         currentMetric = hf.TopographicPositionIndexSAT(ui->dem_localRelief_w->value());
-        paletteDefault = ColorPalette::Reds();
-        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), false, paletteMin, paletteMax);
+        paletteDefault = ColorPalette::CoolWarm();
+        getPaletteRange(currentMetric.percentiles({0.001, 0.999}), true, paletteMin, paletteMax);
     }
     else if (ui->dem_ruggedness->isChecked()) {
         currentMetric = hf.RuggednessIndex(ui->dem_localRelief_w->value());
@@ -329,13 +329,13 @@ void MainWindow::computeMetric()
     else if (ui->dem_surfaceRoughness->isChecked()) {
         currentMetric = hf.SurfaceRoughnessSAT(ui->dem_localRelief_w->value(), false);
         paletteDefault = ColorPalette::Reds();
-        paletteMin = 1;
+        paletteMin = 0;
         paletteMax = currentMetric.percentile(0.999);
     }
     else if (ui->dem_surfaceRoughnessStd->isChecked()) {
         currentMetric = hf.SurfaceRoughnessSAT(ui->dem_localRelief_w->value(), true);
         paletteDefault = ColorPalette::Reds();
-        paletteMin = 1;
+        paletteMin = 0;
         paletteMax = currentMetric.percentile(0.999);
     }
 

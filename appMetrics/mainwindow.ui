@@ -1085,6 +1085,9 @@
                 <property name="text">
                  <string>Curv. from quadric fit on w = </string>
                 </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item>
@@ -1096,7 +1099,7 @@
                  <string/>
                 </property>
                 <property name="minimum">
-                 <number>3</number>
+                 <number>7</number>
                 </property>
                 <property name="maximum">
                  <number>1001</number>
@@ -1105,7 +1108,7 @@
                  <number>2</number>
                 </property>
                 <property name="value">
-                 <number>3</number>
+                 <number>7</number>
                 </property>
                </widget>
               </item>
@@ -1228,7 +1231,7 @@
                  <number>2</number>
                 </property>
                 <property name="value">
-                 <number>9</number>
+                 <number>33</number>
                 </property>
                </widget>
               </item>
