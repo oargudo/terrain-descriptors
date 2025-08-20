@@ -74,8 +74,8 @@ If you use this code, please cite the paper:
     author = {Argudo, O. and Gu{\'e}rin, E. and Schott, H. and Galin, E.},
     journal = {Computer Graphics Forum},
     year = {2025},
-    volume = {n/a},
-    number = {n/a}, 
+    volume = {44},
+    number = {2}, 
     doi = {https://doi.org/10.1111/cgf.70080},
 }
 ```
