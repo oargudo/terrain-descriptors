@@ -1137,7 +1137,7 @@ void MainWindow::computeRidgesLayer()
     }
     else if (ui->ridges_curvature->isChecked()) {
         const double curvThres = ui->ridges_curvatureThreshold->value();
-        ScalarField2 curv = hf.Curvature(HeightField::CurvatureType::MIN, 3);
+        ScalarField2 curv = hf.Curvature(HeightField::CurvatureType::MIN, 0);
         QImage ridgeImg(curv.getSizeX(), curv.getSizeY(),  QImage::Format_ARGB32);
         for (int i = 0; i < curv.getSizeX(); i++) {
             for (int j = 0; j < curv.getSizeY(); j++) {

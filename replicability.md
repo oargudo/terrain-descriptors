@@ -24,14 +24,14 @@ The following figures are all based on the `Alps: Mont Blanc` example terrain, e
 |23 | Orometry / Peakedness (percentile) | Radius: 1.5 km<br>Radius: 6 km |
 |25 | Landforms / Black-White Top Hat | 7^2 window, t = 100m, 100m<br>7^2 window, t = 200m, 200m |
 |28 | Landforms / Geomorphons | 1 km<br>Mask single landform: 5, 6, 8 and 9 |
-|30 | Hydrology / Stream Area (log view) * | Flow algorithm Routing: D8<br>Flow algorithm Routing: MFD |
-|34 left | Hydrology / Wetness Index (TWI) * | Flow algorithm Routing: D8 |
+|30 | Hydrology / Stream Area (log view) * | Flow algorithm Routing: D8<br>Flow algorithm Routing: MFD<br>(adjust colormap max to 6) |
+|34 left | Hydrology / Wetness Index (TWI) * | Flow algorithm Routing: D8<br>(adjust colormap max to 16) |
 |34 right | Hydrology / Depth to water * | To obtain the same output, modify in<br>Rivers net tab / Channel Initiation Threshold:<br>A \* s^0 > 200  |
 |35 | Hydrology / Depth to water * | Flow algorithm Routing: MFD,<br>Left: A^1, S^1 (adjust colormap max to 1)<br>Right: A^0.4, S^1.3  |
 |39 | Orometry / ORS | Radius: 1 km<br>Radius: 10 km |
 |40 | Orometry / Jut<br>Orometry / Rut | Radius: 10 km |
 |41 left | Orometry / Peak prototypicality | - |
-|41 right| Orometry / Orometry / Peakness similarity | 20 % |
-|43 | Rivers net tab / Draw rivers | Channel Initiation Threshold: A \* s^0 > 200<br>Segment width: Stream Area<br>Segment color: Uniform |
-|47 | Ridges net tab / Draw ridges | drainage <= 1<br>min curvature <= -0.005<br>PPA width 5<br>Divide Tree, prom. 1m, detailed ridges |
+|41 right| Orometry / Peakness similarity | 20 % |
+|43 | Rivers net tab / Draw rivers * | Channel Initiation Threshold: A \* s^0 > 200<br>Segment width: Stream Area<br>Segment color: Uniform |
+|47 | Ridges net tab / Draw ridges | drainage <= 1<br>min curvature <= -0.003<br>PPA width 5<br>Divide Tree, prom. 1m, detailed ridges |
 |49 | Hydrology / Branch length max * | ^ 0.5 |
