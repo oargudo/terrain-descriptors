@@ -29,6 +29,7 @@ We provide a Qt project file ([AppTerrainMetrics.pro](./appMetrics/AppTerrainMet
 - Windows 11 and Qt 6.3, with both MinGW 11.2 and MSVC2019 compilers
 - Windows 11 and Qt 6.8, with both MinGW 13.1 and MSVC2022 compilers
 - Ubuntu 22.04.5 LTS and Qt 6.9, with GCC compiler
+- macOS 15.5 and Qt 6.9, with Clang 15.0 (arm64) compiler
 
 To build the project using Qt Creator, open the `.pro` file, choose an appropriate kit, configure the project and build. Alternatively, you can use Qt's command-line tools from the [appMetrics](./appMetrics) directory running `qmake`and then `make`.
 
@@ -36,13 +37,17 @@ To build the project using Qt Creator, open the `.pro` file, choose an appropria
 
 For Windows users, if you prefer not to compile the code, you can download the precompiled [binaries](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/app-metrics.zip). See the [release](https://github.com/oargudo/terrain-descriptors/releases/tag/v1.0) notes for more information. 
 
+### macOS compatibility
+
+Due to compatibility reasons, the first line of each shader in the [shaders](./appMetrics/shaders) folder has been modified to `#version 410 core` and the explicit layout qualifiers for some uniforms have been removed. You can refer to [this commit](https://github.com/oargudo/terrain-descriptors/commit/d8a676e26828cb76401bb61e6a5c512d32482719) for the changes made relative to the tagged release version.
+
 ### Running the application
 
 The application assumes access to the [terrains](./terrains) folder at runtime. Please make sure this folder is either placed or linked in the same directory as the executable. If you are running the application from an IDE, configure the working directory to point to the folder containing `terrains`. If the application runs but the *Preset terrains* dropdown is empty, it's likely that the terrains folder is not accessed correctly, since this list is initialized with the contents in [presets.txt](./terrains/presets.txt).
 
 ### Sample terrains
 
-We provide a varied set of [sample terrains](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/terrains.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
+We provide a varied set of [sample terrains](https://github.com/oargudo/terrain-descriptors/releases/download/v1.0/terrains-presets.zip), which can be edited through [presets.txt](./terrains/presets.txt). Most of them are based on SRTM data (~90m/cell resolution) and highlight different terrain types and features. Additionally, there are a few high-resolution DEMs (up to 2m/cell) for testing metrics on finer details, as well as some low-resolution, full-range terrains that are useful for analyzing large surface networks.
 
 
 ### Improvements
@@ -79,3 +84,9 @@ If you use this code, please cite the paper:
     doi = {https://doi.org/10.1111/cgf.70080},
 }
 ```
+
+### Replicability
+
+Our work has been awarded the Replicability Stamp! [![](https://www.replicabilitystamp.org/logo/Reproducibility-tiny.png)](http://www.replicabilitystamp.org#https-github-com-oargudo-terrain-descriptors)
+
+See [replicability.md](./replicability.md) for instructions on reproducing many of the figures from the paper.
