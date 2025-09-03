@@ -1,11 +1,9 @@
-#version 430 core
+#version 410 core
 
-layout (depth_greater) out float gl_FragDepth;
-
-layout(location = 0) uniform vec3 CamPos;
-layout(location = 1) uniform vec3 CamLookAt;
-layout(location = 2) uniform vec3 CamUp;
-layout(location = 3) uniform vec2 iResolution;
+uniform vec3 CamPos;
+uniform vec3 CamLookAt;
+uniform vec3 CamUp;
+uniform vec2 iResolution;
 
 out vec4 color;
 

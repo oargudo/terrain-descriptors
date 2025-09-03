@@ -1,4 +1,4 @@
-#version 430 core
+#version 410 core
 
 uniform vec2 u_worldMin;
 uniform vec2 u_worldSize;

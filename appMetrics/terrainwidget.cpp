@@ -74,21 +74,23 @@ void TerrainWidget::paintGL()
     // Clear
     glClearColor(0.62f, 0.74f, 0.85f, 1.f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    GLuint shader;
 
     // Sky
+    shader = shaderSkybox.programId();
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
-    glUseProgram(shaderSkybox.programId());
+    glUseProgram(shader);
     glBindVertexArray(skyboxVAO);
-    glUniform3f(0, camera.getEye()[0], camera.getEye()[1], camera.getEye()[2]);
-    glUniform3f(1, camera.getAt()[0], camera.getAt()[1], camera.getAt()[2]);
-    glUniform3f(2, camera.getUp()[0], camera.getUp()[1], camera.getUp()[2]);
-    glUniform2f(3, width(), height());
+    glUniform3f(glGetUniformLocation(shader, "CamPos"), camera.getEye()[0], camera.getEye()[1], camera.getEye()[2]);
+    glUniform3f(glGetUniformLocation(shader, "CamLookAt"), camera.getAt()[0], camera.getAt()[1], camera.getAt()[2]);
+    glUniform3f(glGetUniformLocation(shader, "CamUp"), camera.getUp()[0], camera.getUp()[1], camera.getUp()[2]);
+    glUniform2f(glGetUniformLocation(shader, "iResolution"), width(), height());
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
     // Terrain
 	if (meshVAO > 0) {
-        GLuint shader = shaderTerrain.programId();
+        shader = shaderTerrain.programId();
         glUseProgram(shader);
 
         QMatrix4x4 matPerspective;
